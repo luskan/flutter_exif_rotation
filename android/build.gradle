@@ -25,7 +25,18 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace 'io.flutter.plugins.flutterexifrotation'
     compileSdkVersion 30
+
+    def javaVersion = JavaVersion.VERSION_17
+    compileOptions {
+        sourceCompatibility javaVersion
+        targetCompatibility javaVersion
+    }
+
+    kotlinOptions {
+        jvmTarget = javaVersion.toString()
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
